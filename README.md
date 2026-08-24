@@ -257,7 +257,7 @@ does not respond.
   without whom this core would not exist in the form it does. Terry maintains the most
   complete System 80 archive anywhere, and **every piece of technical documentation and
   software used in this project came from his site**: the technical manual, the factory
-  schematics, the ROM images and the disk and tape library. He also answered questions
+  schematics, and the disk and tape library. He also answered questions
   by email throughout - on how the machine actually works, and on which ROM is which -
   and that firsthand knowledge settled things no document could.
 
