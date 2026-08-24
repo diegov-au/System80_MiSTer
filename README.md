@@ -78,11 +78,7 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
 
 - **64×16 text** from the real counter chain — 112 character times per line of which
   64 are displayed, 12 scan lines per row, 312 lines per frame at 50.77 Hz.
-- **The character generator is the device itself.** `Z25-52116-Character-Generator.bin`
-  is a dump of the 52116 in the Z25 socket, used verbatim with no conversion step.
-- **The seventh address bit is regenerated in hardware**, `A6 = D6 | ~D5`, because the
-  ROM writes six-bit codes to video RAM and lets the hardware rebuild the rest. This
-  is why codes `$00`–`$1F` display as `@A-Z`.
+- **The character generator is the device itself.** - a dump of the 52116 in the Z25 socket, used verbatim with no conversion step.
 - **2×3 block graphics**, the machine's only graphics mode.
 - **"Snow"** — the display blanks while the CPU touches video RAM, which is why a real
   System 80 flickers while BASIC scrolls. Modelled, on by default, switchable. See
