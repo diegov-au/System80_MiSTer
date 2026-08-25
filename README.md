@@ -146,6 +146,7 @@ manual:
 This option can be disabled if desired.
 
 **Turn it off before diagnosing any video problem.** 
+
 ---
 
 ## Installing on MiSTer
