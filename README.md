@@ -181,7 +181,7 @@ image is empty, and the FD1771 bus has no side-select line in any case.
 - **DMK images are read-only.** A correct FM write has to update both copies of every
   doubled byte, and it would sit on a write path that is not yet exercised. JV1 writes
   are available.
-- **A write not tested** - the write path exists but has not been
+- **Disk writes not tested** - the write path exists but has not been
   verified. Back up disk images before trusting it.
 - **The printer and RS-232 ports are tie-offs**, not implementations.
 - **The video sync position is not yet settled against a real machine.** The picture is
