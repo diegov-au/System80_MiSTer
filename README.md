@@ -31,7 +31,7 @@ matter to a core:
   speaker in the case, with no volume control.
 
 Because sound and the cassette share port, **bit 2 mutes the speaker** while the
-cassette is running, which is why that bit is the data-path enable and not just motor
+cassette is running, which is why that bit is the data-path enable and motor
 control.
 
 | | |
