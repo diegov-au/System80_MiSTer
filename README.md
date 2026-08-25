@@ -184,8 +184,6 @@ image is empty, and the FD1771 bus has no side-select line in any case.
 - **Disk writes not tested** - the write path exists but has not been
   verified. Back up disk images before trusting it.
 - **The printer and RS-232 ports are tie-offs**, not implementations.
-- **The video sync position is not yet settled against a real machine.** The picture is
-  correct; where it sits in the frame is still a tuned value.
 
 ---
 
