@@ -8,11 +8,11 @@ The System 80 was built by **EACA** in Hong Kong and sold in Australia and New Z
 by Dick Smith Electronics from 1979. The same machine was sold elsewhere as the
 **Video Genie EG-3003**, the **PMC-80** and the **Komtek 1**. While it functioned as a near-perfect TRS-80 Model I clone with high software compatibility, its internal hardware design differed significantly in key areas.
 
-Z80 + 64×16 video + cassette + an X-4010 expansion unit with an **FD1771** and two
+Z80 + 64×16 video + cassette + an X-4020 expansion unit with an **FD1771** and two
 drives, in Verilog/SystemVerilog. Everything lives in block RAM - no SDRAM or DDR3 is
 used or required.
 
-![System80_1](system80_1.png) ![System80_2](system80_2.png)
+![System80_1](system80_1.png) ![System80_2](system80_2.png) ![System80_3](system80_3.png)
 ---
 
 ## The machine model
@@ -42,7 +42,7 @@ control.
 | **Video** | 64×16 text, 6×12 character cell, 2×3 block graphics |
 | **Refresh** | 50.77 Hz - as shipped in Australia |
 | **Sound** | 1-bit loudspeaker |
-| **Storage** | Cassette, and an X-4010 expansion unit with an FD1771 and two drives |
+| **Storage** | Cassette, and an X-4020 expansion unit with an FD1771 and two drives |
 
 ### Where the System 80 is not a Model I
 
@@ -70,7 +70,7 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
   dot clock, ÷24 for the CPU - so the CPU clock and the character clock are the same
   1.774 MHz signal, exactly as on the machine.
 - **48K of RAM** and the full 14K ROM window, all in block RAM.
-- **The `$37E0` heartbeat at 40 Hz**, generated from the X-4010's own 4 MHz crystal
+- **The `$37E0` heartbeat at 40 Hz**, generated from the X-4020's own 4 MHz crystal
   rather than from mains. Without it NEWDOS/80 reaches `READY` and then sits on a
   literal `HALT`.
 
@@ -93,6 +93,8 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
   Shift+2 gives `@`. *Positional* drives the machine key in the same physical place
   and lets the ROM decide, so Shift+2 gives `"` — which is what the System 80 does,
   and what matrix-reading software wants.
+- **The MkII keypad's function keys**, optional and **off by default** — see
+  *Function keys* below.
 
 ### Disk
 
@@ -216,7 +218,7 @@ identical in both modes.
 
 ### Function keys
 
-There are two different things called F1 on this machine, and only one of them is a
+There are two differentF1 keys on this machine, and only one of them is a
 key at all.
 
 - **The front-panel `F1`** is a *locked switch*, not a matrix key. From the manual: "There
@@ -226,13 +228,17 @@ key at all.
 - **The four programmable function keys** are on the **MkII numeric keypad**. The Blue Label has no keypad, so nothing on
   a real Blue Label drives them.
 
-**So F1–F12 do nothing on this core, and that is faithful rather than missing.**
+**So F1–F12 do nothing by default, and that is faithful rather than missing.**
 
 Some MkII-era software asks for them anyway - WORP-9's work-disk procedure wants
 `<F1>`. A real Blue Label cannot complete that procedure either, for the same reason:
-no keypad, no function keys. Offering them as an optional extra is under
-consideration, but it would be a divergence from the Blue Label rather than a fix, so
-it would be an OSD switch that is off by default.
+no keypad, no function keys.
+
+**"MkII Func Keys" in the OSD** puts PC **F1–F4** on those keypad positions. 
+It is **Disabled** by default on purpose: enabling it makes the core do something the machine it models cannot, 
+so the authentic machine is what you get without asking. With it enabled the ROM reports the four keys as the
+characters `[`, `\`, `]` and `^` - that is the machine's own keyboard decode, not a
+translation added here, and the MkII ROM behaves identically.
 
 Six PC combinations are unreachable in symbolic mode - `` ` `` `~` `[` `]` `\` `{` `}`
 `|` `^` `_` - because no System 80 key produces those characters at all. They do
@@ -261,7 +267,7 @@ does not respond.
 ### Hardware sources
 
 The EACA **factory schematics** and the **System 80 Technical Manual** are the primary
-sources for the memory map, the video hardware, the port assignments and the X-4010
+sources for the memory map, the video hardware, the port assignments and the X-4020
 expansion unit. They are the only sources in the project that are not somebody else's
 reading of the hardware.
 
