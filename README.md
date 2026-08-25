@@ -145,10 +145,7 @@ manual:
 
 This option can be disabled if desired.
 
-**Turn it off before diagnosing any video problem.** A deliberately injected artefact
-gives a real defect somewhere to hide, and *"that flicker is just snow"* is an
-expensive sentence.
-
+**Turn it off before diagnosing any video problem.** 
 ---
 
 ## Installing on MiSTer
