@@ -78,10 +78,10 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
 
 - **64×16 text** from the real counter chain - 112 character times per line of which
   64 are displayed, 12 scan lines per row, 312 lines per frame at 50.77 Hz.
-- **The character generator is the device itself.** A dump of the 52116 in the Z25 socket, used verbatim with no conversion step.
+- **The character generator is the device itself.** A dump of the 52116 in the Z25 socket.
 - **2×3 block graphics**, the machine's only graphics mode.
 - **"Snow"** - the display blanks while the CPU touches video RAM, which is why a real
-  System 80 flickers while BASIC scrolls. Modelled, on by default, switchable. See
+  System 80 flickers while BASIC scrolls. Modeled, on by default, switchable. See
   below.
 - **Three phosphors** - green, amber, white.
 
@@ -98,18 +98,16 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
 
 ### Disk
 
-- **FD1771**, single density, **FM only** - this is a 1771, not a 1791/1793. There is
-  no MFM and **no side-select line on the bus**; both are absent from the hardware
-  rather than merely unimplemented.
+- **FD1771**, single density
 - **Two drives**, addressed as `:0` and `:1`.
 - **JV1 and DMK containers**, both auto-detected at mount. DMK detection is a size
-  signature rather than a magic number, because DMK has no magic.
+  signature.
 - **JV1 is read/write. DMK is read-only** - see *Known limitations*.
 
 ### Cassette
 
 - **`.cas` files**, a raw MSB-first bitstream, played through the real transport
-  timing rather than injected.
+  timing.
 - **Rewind** from the OSD, because a load leaves the tape where the ROM stopped it.
 
 ### Peripherals
@@ -218,7 +216,7 @@ identical in both modes.
 
 ### Function keys
 
-There are two differentF1 keys on this machine, and only one of them is a
+There are two different F1 keys on this machine, and only one of them is a
 key at all.
 
 - **The front-panel `F1`** is a *locked switch*, not a matrix key. From the manual: "There
@@ -228,17 +226,16 @@ key at all.
 - **The four programmable function keys** are on the **MkII numeric keypad**. The Blue Label has no keypad, so nothing on
   a real Blue Label drives them.
 
-**So F1–F12 do nothing by default, and that is faithful rather than missing.**
+**F1–F12 do nothing by default, and that is faithful rather than missing.**
 
-Some MkII-era software asks for them anyway - WORP-9's work-disk procedure wants
+Some MkII-era software requires them - WORP-9's work-disk procedure wants
 `<F1>`. A real Blue Label cannot complete that procedure either, for the same reason:
 no keypad, no function keys.
 
 **"MkII Func Keys" in the OSD** puts PC **F1–F4** on those keypad positions. 
 It is **Disabled** by default on purpose: enabling it makes the core do something the machine it models cannot, 
-so the authentic machine is what you get without asking. With it enabled the ROM reports the four keys as the
-characters `[`, `\`, `]` and `^` - that is the machine's own keyboard decode, not a
-translation added here, and the MkII ROM behaves identically.
+so the authentic machine is what you get by default. When enabled the ROM reports the four keys as the
+characters `[`, `\`, `]` and `^` - that is the machine's own keyboard decode,and the MkII ROM behaves identically.
 
 Six PC combinations are unreachable in symbolic mode - `` ` `` `~` `[` `]` `\` `{` `}`
 `|` `^` `_` - because no System 80 key produces those characters at all. They do
