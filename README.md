@@ -234,8 +234,7 @@ characters `[`, `\`, `]` and `^` - that is the machine's own keyboard decode,and
 
 Six PC combinations are unreachable in symbolic mode - `` ` `` `~` `[` `]` `\` `{` `}`
 `|` `^` `_` - because no System 80 key produces those characters at all. They do
-nothing, deliberately: a wrong character you do not notice is worse than a key that
-does not respond.
+nothing, deliberately.
 
 ---
 
