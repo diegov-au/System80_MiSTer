@@ -12,7 +12,7 @@ Z80 + 64×16 video + cassette + an X-4020 expansion unit with an **FD1771** and 
 drives, in Verilog/SystemVerilog. Everything lives in block RAM - no SDRAM or DDR3 is
 used or required.
 
-![System80_1](system80_1.png) ![System80_2](system80_2.png) ![System80_3](system80_3.png)
+![System80_1](system80_1.png) ![System80_2](system80_2.png)
 ---
 
 ## The machine model
