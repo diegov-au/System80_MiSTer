@@ -156,7 +156,6 @@ The core name is **`System80`**, which is what MiSTer uses to find everything.
 ```
 /media/fat/_Computer/System80_YYYYMMDD.rbf
 /media/fat/games/System80/
-        boot0.rom          (optional - see below)
         *.dsk  *.jv1  *.dmk  *.cas
 ```
 
