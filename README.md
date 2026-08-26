@@ -70,7 +70,7 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
   dot clock, ÷24 for the CPU - so the CPU clock and the character clock are the same
   1.774 MHz signal, exactly as on the machine.
 - **48K of RAM** and the full 14K ROM window, all in block RAM.
-- **The `$37E0` heartbeat at 40 Hz**, generated from the X-4020's own 4 MHz crystal
+- **The `$37E0` heartbeat at 40 Hz**, generated from the X-4020's own 8 MHz crystal
   rather than from mains. Without it NEWDOS/80 reaches `READY` and then sits on a
   literal `HALT`.
 
