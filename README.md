@@ -70,6 +70,9 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
   dot clock, ÷24 for the CPU - so the CPU clock and the character clock are the same
   1.774 MHz signal, exactly as on the machine.
 - **48K of RAM** and the full 14K ROM window, all in block RAM.
+- **A 40 Hz heartbeat interrupt** derived from the expansion unit, which is what the DOS uses
+  to keep time and to wake from `HALT`. Without it NEWDOS/80 reaches `READY` and then
+  sits on `HALT`.
   
 ### Video
 
