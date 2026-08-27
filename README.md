@@ -78,7 +78,7 @@ The boot prompt is `READY ?`, not the Model I's `MEM SIZE?`.
 
 - **64×16 text** from the real counter chain - 112 character times per line of which
   64 are displayed, 12 scan lines per row, 312 lines per frame at 50.77 Hz.
-- **The character generator is the device itself.** A dump of the 52116 in the Z25 socket.
+- **The character generator.** A dump of the 52116 in the Z25 socket.
 - **2×3 block graphics**, the machine's only graphics mode.
 - **"Snow"** - the display blanks while the CPU touches video RAM, which is why a real
   System 80 flickers while BASIC scrolls. Modeled, on by default, switchable. See
