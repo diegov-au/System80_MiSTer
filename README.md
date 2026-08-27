@@ -289,5 +289,5 @@ controller. The `tv80` CPU core is MIT.
 ---
 
 This core was developed with AI assistance. The RTL, the simulation harness and the
-documentation were written collaboratively with Claude, with every hardware behaviour
+documentation were written collaboratively with AI, with every hardware behaviour
 verified against the factory schematics, the technical manual, and a real DE10-Nano.
