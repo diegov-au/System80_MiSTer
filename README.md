@@ -17,9 +17,8 @@ used or required.
 
 ## The machine model
 
-**Blue Label System 80.** The fourth and last variant, from 1982, named for its
-dark-blue faceplate. Still Mark I lineage - not a Mark II - with three changes that
-matter to a core:
+**System 80 - Blue Label.** The fourth and last variant, from 1982, named for its
+dark-blue faceplate. Still Mark I lineage - not a Mark II - with three key improvements:
 
 - **Lower case fitted as standard.** The video RAM is 8 bits wide which allows for real lowercase glyphs. On a 7-bit Mark I they show as punctuation instead.
 - **A 1.5K ROM/EPROM** in the 2K gap between the BASIC interpreter and the start of
